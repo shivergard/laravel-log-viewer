@@ -17,19 +17,27 @@ Small log viewer for laravel. Looks like this:
 
 Install
 -------
-Install via composer
-```
-composer require rap2hpoutre/laravel-log-viewer
-```
+To Start using it add to composer.json repozitory
 
-Add Service Provider to `config/app.php` in `providers` section
-```php
-Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
-```
+    "repositories": [
+      {
+      "type": "git",
+       "url": "git@github.com:shivergard/laravel-log-viewer.git"
+      }
+    ],
 
-Add a route in `app/Http/routes.php` (or choose another route): 
-```php 
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
-``` 
+and add requirements
 
-Go to `http://myapp/logs` or some other route
+    "require": {
+        ...
+        "rap2hpoutre/laravel-log-viewer" : "dev-master" 
+    },
+
+and add service provider
+
+        'providers' => [
+        ...
+      Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        ...
+
+Go to `http://myapp/logs`
